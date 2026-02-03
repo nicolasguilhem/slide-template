@@ -29,6 +29,10 @@ h1 {
         width: 300px;
         height: 300px;
         border-radius: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
     }
 
     .github {
@@ -58,9 +62,10 @@ h1 {
         width: 75%;
         margin: auto;
 
-        & > div {
+        a {
+            width: fit-content;
+            height: fit-content;
             margin: auto;
-            align-content: center;
             margin-top: 3rem;
         }
     }
@@ -159,5 +164,58 @@ html {
     }
     50% {
         transform: translateY(-10px) rotate(-1deg);
+    }
+}
+
+/* Responsive mobile */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 1.5em;
+        padding: 0 1rem;
+    }
+
+    .main .links {
+        grid-template-columns: repeat(2, 1fr);
+        width: 95%;
+        gap: 0.5rem;
+    }
+
+    .main .links a {
+        margin-top: 1rem;
+    }
+
+    .main .card {
+        width: 150px;
+        height: 150px;
+        padding: 0.5em;
+    }
+
+    .main .card img {
+        max-width: 60%;
+    }
+
+    .main .card p {
+        margin: 0.5em 0 0 0;
+        font-size: 0.9em;
+    }
+
+    html {
+        background-position: center;
+        background-attachment: fixed;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.2em;
+    }
+
+    .main .card {
+        width: 120px;
+        height: 120px;
+    }
+
+    .main .card img {
+        max-width: 50%;
     }
 }
